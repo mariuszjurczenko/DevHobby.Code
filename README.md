@@ -18,3 +18,16 @@ Projekt ten w przystępny sposób wyjaśnia podstawy programowania obiektowego (
 *   **Dla kogo:** Idealny materiał dla początkujących, którzy chcą zrozumieć OOP w wizualny sposób, bez skomplikowanej teorii.
 
 ---
+
+# DevHobby.Code.RPG
+
+**Tutorial na YouTube:** [KLASY i OBIEKTY w C# – Tworzymy Grę RPG Krok po Kroku!](https://www.youtube.com/watch?v=ij-MdPW1BvI)
+
+Projekt ten przedstawia praktyczne zastosowanie klas i obiektów poprzez stworzenie prostego systemu RPG w C#. Gracz poznaje fundamenty OOP, tworząc drużynę bohaterów z własnymi statystykami.
+
+**Najważniejsze informacje:**
+*	**Cel:** Pokazać, jak za pomocą klas i właściwości modelować rzeczywiste obiekty (np. bohaterów w grze).
+*	**Koncepcje:** Prywatne pola, publiczne właściwości, enkapsulacja (hermetyzacja), walidacja danych, konstruktor.
+*	**Dla kogo:** Dla początkujących, którzy chcą przełożyć teorię obiektów na działający kod w stylu fantasy.
+
+---
