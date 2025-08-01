@@ -2,62 +2,76 @@
 
 public class Bohater
 {
-    // Pola klasy - cechy każdego bohatera
-    // Pola są teraz PRYWATNE - nikt z zewnątrz nie ma dostępu
-    private string imie;
-    private int puktyZycia;
-    private int sila;
+    // Właściwości auto-implemented (skrócona składnia)
+    public string Imie { get; private set; }
+    public int PunktyZycia { get; private set; }
+    public int Sila { get; private set; }
+    public int Poziom { get; private set; }
 
-    // Właściwości - wyglądają jak pola, działają jak metody!
-    public string Imie
+    // Konstruktor
+    public Bohater(string imie, int punktyZycia, int sila)
     {
-        get { return imie; }
-        private set { imie = value; }
-    }
-
-    public int PunktyZycia
-    {
-        get { return puktyZycia; }
-        set
-        {
-            if (value < 0)
-            {
-                puktyZycia = 0;
-                Console.WriteLine($"{Imie}: HP ustawione na 0 (próbowano: {value})");
-            }
-            else
-            {
-                puktyZycia = value;
-            }
-        }
-    }
-
-    public int Sila
-    {
-        get { return sila; }
-        set
-        {
-            if (value < 1)
-            {
-                sila = 1;
-            }
-            else if (value > 100)
-            {
-                sila = 100;
-            }
-            else
-            {
-                sila = value;
-            }
-        }
-    }
-
-    // Konstruktor - specjalna metoda wywoływana przy tworzeniu obiektu
-    public Bohater(string imie, int puktyZycia, int sila)
-    {
-        // 'this' odnosi się do aktualnego obiektu
         Imie = imie;
-        PunktyZycia = puktyZycia;
-        Sila = sila;
+        PunktyZycia = punktyZycia > 0 ? punktyZycia : 1;
+        Sila = Math.Clamp(sila, 1, 100);  // Ogranicza wartość do zakresu
+        Poziom = 1;
+    }
+
+    // Metoda ataku
+    public void Atakuj(Bohater cel)
+    {
+        if (PunktyZycia <= 0)
+        {
+            Console.WriteLine($"{Imie} nie może atakować - jest pokonany!");
+            return;
+        }
+
+        Console.WriteLine($"\n⚔️ {Imie} atakuje {cel.Imie}!");
+
+        // Losowy modyfikator ataku (80% - 120% siły)
+        Random rand = new Random();
+        int obrazenia = (int)(Sila * (0.8 + rand.NextDouble() * 0.4));
+
+        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        cel.OtrzymajObrazenia(obrazenia);
+    }
+
+    // Metoda otrzymywania obrażeń (prywatna!)
+    private void OtrzymajObrazenia(int obrazenia)
+    {
+        PunktyZycia -= obrazenia;
+        if (PunktyZycia < 0) PunktyZycia = 0;
+
+        Console.WriteLine($"   {Imie} ma teraz {PunktyZycia}/{100} HP");
+
+        if (PunktyZycia == 0)       
+            Console.WriteLine($"💀 {Imie} został pokonany!");
+    }
+
+    // Metoda leczenia
+    public void Lecz(int punkty)
+    {
+        if (PunktyZycia == 0)
+        {
+            Console.WriteLine($"{Imie} nie może się leczyć - jest pokonany!");
+            return;
+        }
+
+        int stareHP = PunktyZycia;
+        PunktyZycia = Math.Min(PunktyZycia + punkty, 100); // Max 100 HP
+
+        Console.WriteLine($"✨ {Imie} leczy się o {PunktyZycia - stareHP} HP!");
+        Console.WriteLine($"   Aktualne HP: {PunktyZycia}/100");
+    }
+    
+    // Metoda wyświetlania statusu
+    public void PokazStatus()
+    {
+        string pasekHP = new string('█', PunktyZycia / 10) + 
+                        new string('░', (100 - PunktyZycia) / 10);
+        
+        Console.WriteLine($"\n=== {Imie} ===");
+        Console.WriteLine($"HP: [{pasekHP}] {PunktyZycia}/100");
+        Console.WriteLine($"Siła: {Sila} | Poziom: {Poziom}");
     }
 }

@@ -4,33 +4,46 @@ public class Program
 {
     static void Main()
     {
-        // 2 sposób - klasy. Tworzymy pierwszego bohatera
-        Bohater aragorn = new Bohater("Aragorn", 100, 25);
-        Bohater legolas = new Bohater("Legolas", 80, 30);
-        Bohater gimli = new Bohater("Gimli", 120, 35);
-
-        // Możemy nawet stworzyć bohatera "w locie"
-        Bohater[] druzyna = { 
-            new Bohater("Frodo", 50, 10),
-            new Bohater("Sam", 60, 15),
-            new Bohater("Gandalf", 150, 40),
-            aragorn,
-            gimli, 
-            legolas 
-        };
-
-        foreach (var bohater in druzyna)
+        Console.WriteLine("=== ARENA WALK ===\n");
+        
+        // Tworzenie bohaterów
+        Bohater rycerz = new Bohater("Sir Galahad", 100, 30);
+        Bohater czarnoksieznik = new Bohater("Mroczny Mag", 80, 35);
+        
+        // Pokazujemy status przed walką
+        rycerz.PokazStatus();
+        czarnoksieznik.PokazStatus();
+        
+        Console.WriteLine("\n--- WALKA ROZPOCZĘTA! ---");
+        
+        // Symulacja walki
+        while (rycerz.PunktyZycia > 0 && czarnoksieznik.PunktyZycia > 0)
         {
-            Console.WriteLine($"{bohater.Imie} - HP: {bohater.PunktyZycia}, Siła: {bohater.Sila}");
+            rycerz.Atakuj(czarnoksieznik);
+            
+            if (czarnoksieznik.PunktyZycia > 0)
+            {
+                czarnoksieznik.Atakuj(rycerz);
+            }
+            
+            // Czasem rycerz się leczy
+            if (rycerz.PunktyZycia < 30 && rycerz.PunktyZycia > 0)
+            {
+                Console.WriteLine($"\n{rycerz.Imie} używa mikstury!");
+                rycerz.Lecz(20);
+            }
+            
+            Thread.Sleep(1000); // Pauza dla dramatyzmu
         }
-
-        // Problemy z publicznymi polami
-        aragorn.PunktyZycia = 100;
-        legolas.Sila = 9999;
-        //gimli.Imie = "";
-
-        Console.WriteLine($"{aragorn.Imie} ma {aragorn.PunktyZycia} HP");
-        Console.WriteLine($"{legolas.Imie} ma {legolas.Sila} Sila");
-        Console.WriteLine($"{gimli.Imie} ma {gimli.Sila} Sila");
+        
+        // Podsumowanie
+        Console.WriteLine("\n=== WALKA ZAKOŃCZONA ===");
+        rycerz.PokazStatus();
+        czarnoksieznik.PokazStatus();
+        
+        if (rycerz.PunktyZycia > 0)
+            Console.WriteLine($"\n🏆 {rycerz.Imie} WYGRYWA!");
+        else
+            Console.WriteLine($"\n🏆 {czarnoksieznik.Imie} WYGRYWA!");
     }
 }
