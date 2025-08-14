@@ -1,0 +1,8 @@
+# typ,imie
+bohater:wojownik,Sir Galahad
+bohater:mag,Mroczny Mag
+bohater:lucznik,Legolas
+potwor:ork,Ork
+potwor:goblin,Goblin
+potwor:smok,Smok
+bohater:wojownik,Bilbo Bagins

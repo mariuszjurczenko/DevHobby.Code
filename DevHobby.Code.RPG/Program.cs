@@ -9,17 +9,11 @@ public class Program
         Console.WriteLine("=== ARENA WALK ===\n");
         
         // Tworzenie bohaterów
-        var rycerz = new Wojownik("Sir Galahad");
-        var czarnoksieznik = new Mag("Mroczny Mag");
-        var lucznik = new Lucznik("Legolas");
+        var factory = new PostacFactory();
 
-        var ork = new Ork();
-        var smok = new Smok();
-        var goblin = new Goblin();
-   
-        // Lista wszystkich postaci biorących udział w walce
-        var wszystkiePostacie = new List<Postac> { rycerz, czarnoksieznik, lucznik, ork, goblin, smok };
-
+        // Wczytanie z pliku konfiguracyjnego
+        var wszystkiePostacie = factory.WczytajPostacieZJson("postacie.json");
+         
         // Pokazujemy status przed walką
         wszystkiePostacie.ForEach(p => p.PokazStatus());
         

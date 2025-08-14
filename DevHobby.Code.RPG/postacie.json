@@ -1,0 +1,9 @@
+[
+  { "Kategoria": "bohater", "Typ": "wojownik", "Imie": "Sir Galahad" },
+  { "Kategoria": "bohater", "Typ": "mag", "Imie": "Mroczny Mag" },
+  { "Kategoria": "bohater", "Typ": "lucznik", "Imie": "Legolas" },
+  { "Kategoria": "potwor", "Typ": "ork", "Imie": "Ork" },
+  { "Kategoria": "potwor", "Typ": "goblin", "Imie": "Goblin" },
+  { "Kategoria": "potwor", "Typ": "smok", "Imie": "Smok" },
+  { "Kategoria": "bohater", "Typ": "mag", "Imie": "Wielki Mag" }
+]
