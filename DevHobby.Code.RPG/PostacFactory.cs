@@ -6,24 +6,52 @@ namespace DevHobby.Code.RPG
     {
         public Postac StworzBohatera(string typ, string imie)
         {
-            return typ.ToLower() switch
+            Postac postac;
+
+            switch (typ.ToLower())
             {
-                "wojownik" => new Wojownik(imie),
-                "lucznik" => new Lucznik(imie),
-                "mag" => new Mag(imie),
-                _ => throw new ArgumentException($"Nieznany typ bohatera: {typ}")
-            };
+                case "wojownik":
+                    postac = new Wojownik(imie);
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                case "lucznik":
+                    postac = new Lucznik(imie);
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                case "mag":
+                    postac = new Mag(imie);
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                default:
+                    throw new ArgumentException($"Nieznany typ bohatera: {typ}");
+            }
+
+            return postac;
         }
 
         public Postac StworzPotwora(string typ)
         {
-            return typ.ToLower() switch
+            Postac postac;
+
+            switch (typ.ToLower())
             {
-                "ork" => new Ork(),
-                "goblin" => new Goblin(),
-                "smok" => new Smok(),
-                _ => throw new ArgumentException($"Nieznany typ potwora: {typ}")
-            };
+                case "ork":
+                    postac = new Ork();
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                case "goblin":
+                    postac = new Goblin();
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                case "smok":
+                    postac = new Smok();
+                    postac.KomunikatWygenerowany += Console.WriteLine;
+                    break;
+                default:
+                    throw new ArgumentException($"Nieznany typ potwora: {typ}");
+            }
+
+            return postac;
         }
 
         public List<Postac> WczytajPostacieZPliku(string sciezka)

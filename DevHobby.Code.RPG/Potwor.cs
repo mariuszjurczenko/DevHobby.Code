@@ -10,8 +10,8 @@ public abstract class Potwor : Postac
         string pasekHP = new string('█', PunktyZycia / 10) +
                         new string('░', (100 - PunktyZycia) / 10);
 
-        Console.WriteLine($"\n=== {Imie} ===");
-        Console.WriteLine($"HP: [{pasekHP}] {PunktyZycia}/100");
-        Console.WriteLine($"Siła: {Sila}");
+        GenerujKomunikat($"\n=== {Imie} ===");
+        GenerujKomunikat($"HP: [{pasekHP}] {PunktyZycia}/100");
+        GenerujKomunikat($"Siła: {Sila}");
     }
 }

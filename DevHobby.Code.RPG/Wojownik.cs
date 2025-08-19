@@ -10,9 +10,9 @@ public class Wojownik : Bohater
     {
         base.Atakuj(cel);
 
-        Console.WriteLine($"\n ⚔️ Wojownik {Imie} uderza z furią {cel.Imie}!");
+        GenerujKomunikat($"\n ⚔️ Wojownik {Imie} uderza z furią {cel.Imie}!");
         int obrazenia = (int)(Sila * (0.8 + new Random().NextDouble() * 0.4));
-        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        GenerujKomunikat($"   Zadaje {obrazenia} obrażeń!");
         cel.OtrzymajObrazenia(obrazenia);
     }
 }

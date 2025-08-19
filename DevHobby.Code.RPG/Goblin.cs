@@ -10,9 +10,9 @@ public class Goblin : Potwor
     {
         base.Atakuj(cel);
 
-        Console.WriteLine($"\n 🐍 {Imie} rzuca zatruty sztylet w {cel.Imie}!");
-        int obrazenia = (int)(Sila * 0.9); // Goblin zadaje mniej obrażeń
-        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        GenerujKomunikat($"\n 🐍 {Imie} rzuca zatruty sztylet w {cel.Imie}!");
+        int obrazenia = (int)(Sila * 0.9);
+        GenerujKomunikat($"   Zadaje {obrazenia} obrażeń!");
         cel.OtrzymajObrazenia(obrazenia);
     }
 }

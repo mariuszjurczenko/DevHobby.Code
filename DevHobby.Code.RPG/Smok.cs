@@ -10,9 +10,9 @@ public class Smok : Potwor
     {
         base.Atakuj(cel);
 
-        Console.WriteLine($"\n 🔥 {Imie} zieje ogniem na {cel.Imie}!");
-        int obrazenia = Sila * 2; // Smok jest bardzo potężny i zadaje podwójne obrażenia
-        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        GenerujKomunikat($"\n 🔥 {Imie} zieje ogniem na {cel.Imie}!");
+        int obrazenia = Sila * 2;
+        GenerujKomunikat($"   Zadaje {obrazenia} obrażeń!");
         cel.OtrzymajObrazenia(obrazenia);
     }
 }

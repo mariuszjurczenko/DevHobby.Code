@@ -10,9 +10,9 @@ public class Ork : Potwor
     {
         base.Atakuj(cel);
 
-        Console.WriteLine($"\n 👺 {Imie} uderza maczugą w {cel.Imie}!");
-        int obrazenia = Sila + 3; // Ork zadaje obrażenia większe o stałą wartość
-        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        GenerujKomunikat($"\n 👺 {Imie} uderza maczugą w {cel.Imie}!");
+        int obrazenia = Sila + 3;
+        GenerujKomunikat($"   Zadaje {obrazenia} obrażeń!");
         cel.OtrzymajObrazenia(obrazenia);
     }
 }

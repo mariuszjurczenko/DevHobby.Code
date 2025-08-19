@@ -10,9 +10,9 @@ public class Lucznik : Bohater
     {
         base.Atakuj(cel);
 
-        Console.WriteLine($"\n 🏹 Lucznik {Imie} strzela celnie w {cel.Imie}!");
-        int obrazenia = (int)(Sila * 1.2) + new Random().Next(1, 5); // Łucznik ma bonus do siły, ale mniejszy losowy modyfikator
-        Console.WriteLine($"   Zadaje {obrazenia} obrażeń!");
+        GenerujKomunikat($"\n 🏹 Lucznik {Imie} strzela celnie w {cel.Imie}!");
+        int obrazenia = (int)(Sila * 1.2) + new Random().Next(1, 5);
+        GenerujKomunikat($"   Zadaje {obrazenia} obrażeń!");
         cel.OtrzymajObrazenia(obrazenia);
     }
 }
