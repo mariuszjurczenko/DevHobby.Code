@@ -1,4 +1,4 @@
-namespace DevHobby.Code.RPG;
+namespace DevHobby.Code.RPG.Core.Entities;
 
 public class Mag : Bohater
 {

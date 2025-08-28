@@ -1,4 +1,5 @@
-﻿using DevHobby.Code.RPG;
+﻿using DevHobby.Code.RPG.Core.Entities;
+using DevHobby.Code.RPG.Infrastructure;
 
 public class Program
 {
@@ -6,7 +7,7 @@ public class Program
     {
         Console.WriteLine("Nacisnij Enter aby zobaczyć Bohaterów Gry");
         Console.ReadLine();
-        Console.WriteLine("=== ARENA WALK ===\n");
+        Console.WriteLine("=== ARENA WALKI ===\n");
         
         // Tworzenie bohaterów
         var factory = new PostacFactory();

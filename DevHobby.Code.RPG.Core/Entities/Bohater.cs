@@ -1,4 +1,4 @@
-﻿namespace DevHobby.Code.RPG;
+﻿namespace DevHobby.Code.RPG.Core.Entities;
 
 public abstract class Bohater : Postac
 {
