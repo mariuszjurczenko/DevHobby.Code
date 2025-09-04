@@ -84,7 +84,7 @@ W tym odcinku rozpoczynamy serię refaktoringu naszego projektu RPG do Clean Arc
 - Uporządkujemy kod, zachowując jego dotychczasowe działanie
 - Stworzymy czysty fundament pod dalsze refaktoringi
 
-#### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Repository Pattern [ 2/6 ] - [ C# OOP Kurs cz.7 ]](https://www.youtube.com/watch?v=yiHNAJQmU3o
+#### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Repository Pattern [ 2/6 ] - [ C# OOP Kurs cz.7 ]](https://www.youtube.com/watch?v=yiHNAJQmU3o)
 
 W tym odcinku serii refaktoryzujemy naszą grę RPG do Clean Architecture i wdrażamy Repository Pattern. Oddzielamy domenę biznesową od szczegółów technicznych, dzięki czemu kod staje się czystszy, łatwiejszy w testowaniu i rozszerzaniu.
 
