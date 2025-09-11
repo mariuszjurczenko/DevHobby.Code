@@ -93,3 +93,14 @@ W tym odcinku serii refaktoryzujemy naszą grę RPG do Clean Architecture i wdra
 - Jak zastosować Single Responsibility Principle i Open/Closed Principle w praktyce
 - Jak stworzyć IPostacRepository i jego implementacje dla TXT i JSON
 - Jak przygotować kod pod przyszłe rozszerzenia (np. baza danych, API)
+
+
+#### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Service Layer (BattleService) [ 3/6 ] - [ C# OOP Kurs cz.8 ]](https://www.youtube.com/watch?v=mYTsNjrK1oM)
+
+W tym odcinku refaktoryzacji RPG do Clean Architecture wydzielamy logikę biznesową z Program.cs i przenosimy ją do Service Layer.
+
+📚 CZEGO SIĘ NAUCZYSZ:
+Jak stworzyć IBattleService i BattleService
+Jak oczyścić kod i sprawić, że stanie się testowalny, czytelny i reużywalny
+Jak przygotować grunt pod kolejne warstwy (Application Service)
+To praktyczny przykład refaktoryzacji krok po kroku – z chaosu w Program.cs do czystej architektury!
