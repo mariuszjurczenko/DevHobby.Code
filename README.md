@@ -100,7 +100,20 @@ W tym odcinku serii refaktoryzujemy naszą grę RPG do Clean Architecture i wdra
 W tym odcinku refaktoryzacji RPG do Clean Architecture wydzielamy logikę biznesową z Program.cs i przenosimy ją do Service Layer.
 
 📚 CZEGO SIĘ NAUCZYSZ:
-Jak stworzyć IBattleService i BattleService
-Jak oczyścić kod i sprawić, że stanie się testowalny, czytelny i reużywalny
-Jak przygotować grunt pod kolejne warstwy (Application Service)
+- Jak stworzyć IBattleService i BattleService
+- Jak oczyścić kod i sprawić, że stanie się testowalny, czytelny i reużywalny
+- Jak przygotować grunt pod kolejne warstwy (Application Service)
 To praktyczny przykład refaktoryzacji krok po kroku – z chaosu w Program.cs do czystej architektury!
+
+
+#### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Application Service (GameService) [ 4/6 ] - [ C# OOP Kurs cz.9 ]](https://www.youtube.com)
+
+W tym odcinku serii Refaktoryzacja do Clean Architecture przenosimy logikę z Program.cs do dedykowanego Application Service – GameService.
+
+📚 CZEGO SIĘ NAUCZYSZ:
+- Jak wydzielić use case’y aplikacji,
+- Jak zastosować Dependency Injection,
+- Jak dodać walidację biznesową,
+- Jak wyciągnąć interfejs IGameService,
+- Jak i przygotować kod pod pełną integrację z Dependency Injection Container.
+- To praktyczny przykład, jak zasada Dependency Rule działa w prawdziwym projekcie C#/.NET! 🚀
