@@ -4,5 +4,5 @@ namespace DevHobby.Code.RPG.Core.Interfaces;
 
 public interface IBattleService
 {
-    Postac Sylumuj(IList<Postac> uczestnicy);
+    Postac Symuluj(IList<Postac> uczestnicy);
 }

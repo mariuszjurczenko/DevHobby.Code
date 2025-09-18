@@ -9,7 +9,7 @@ public class BattleService : IBattleService
 
     public event Action<string>? KomunikatWygenerowany;
 
-    public Postac Sylumuj(IList<Postac> uczestnicy)
+    public Postac Symuluj(IList<Postac> uczestnicy)
     {
         // Symulacja walki
         while (uczestnicy.Count(p => p.PunktyZycia > 0) > 1)
