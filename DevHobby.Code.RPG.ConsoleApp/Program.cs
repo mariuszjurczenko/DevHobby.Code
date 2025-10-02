@@ -1,11 +1,27 @@
-﻿using DevHobby.Code.RPG.Application;
-using DevHobby.Code.RPG.Core.Services;
-using DevHobby.Code.RPG.Infrastructure;
-using DevHobby.Code.RPG.Infrastructure.Data;
+﻿using DevHobby.Code.RPG.Application.Interfaces;
+using DevHobby.Code.RPG.Infrastructure.Extensions;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 public class Program
 {
-    static void Main()
+    static async Task Main(string[] args)
+    {
+        // Tworzymy i konfigurujemy Host
+        var host = CreateHostBuilder(args).Build();
+
+        // Uruchamiamy aplikację
+        await RunGameAsync(host);                 
+    }
+
+    private static IHostBuilder CreateHostBuilder(string[] args) => 
+        Host.CreateDefaultBuilder(args)
+        .ConfigureServices((hostContext, services) =>
+        {
+            services.AddRpgServices();
+        });
+
+    private static async Task RunGameAsync(IHost host)
     {
         Console.WriteLine("Nacisnij Enter aby zobaczyć Bohaterów Gry");
         Console.ReadLine();
@@ -13,13 +29,11 @@ public class Program
 
         try
         {
-            // Tworzenie bohaterów
-            var factory = new PostacFactory();
-            var repository = new JsonPostacRepository(factory);
-            var battleService = new BattleService();
-            battleService.KomunikatWygenerowany += Console.WriteLine;
+            // Tworzymy scope dla tej sesji gry
+            using var serviceScope = host.Services.CreateScope();
 
-            var gameService = new GameService(repository, battleService);
+            // DI Container automatycznie dostarcza wszystkie zależności
+            var gameService = serviceScope.ServiceProvider.GetRequiredService<IGameService>();
 
             // Ładowanie postaci
             gameService.PobierzPostacie(("postacie.json"));
@@ -50,6 +64,6 @@ public class Program
         catch (Exception ex)
         {
             Console.WriteLine($"❌ Błąd: {ex.Message}");
-        }             
+        }
     }
 }
