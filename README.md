@@ -120,3 +120,24 @@ W tym odcinku serii Refaktoryzacja do Clean Architecture przenosimy logikę z Pr
 
 
 #### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Dependency Injection w .NET [ 5/6 ][ C# OOP Kurs cz.10 ]](https://www.youtube.com/watch?v=j5Pqjc__OUU)
+
+W tym odcinku zajmiemy się Dependency Injection (DI) – pokażę Ci, jak zastąpić ręczne tworzenie obiektów profesjonalnym kontenerem DI i jak poprawnie zarządzać cyklem życia serwisów.
+
+Nauczysz się:
+👉Jak wprowadzić DI do aplikacji konsolowej .NET
+👉Jak korzystać z Microsoft.Extensions.Hosting i ServiceCollection
+👉Jak konfigurować serwisy przez extension methods
+👉Jakie są różnice między Transient, Scoped, Singleton
+👉Jak poprawić testowalność, maintainability i czytelność kodu
+
+
+#### Tutorial na YouTube: [C# Refaktoring do Clean Architecture – Tworzymy GameRunner [ 6/6 ][ C# OOP Kurs cz.11 ]](https://www.youtube.com/watch?v=EfWaI0-4yH0)
+
+W tym odcinku refaktoryzujemy klasę Program.cs, która do tej pory robiła zbyt wiele rzeczy — od tworzenia kontenera DI po uruchamianie gry i obsługę błędów. Pokażę Ci, jak wydzielić całą logikę do klasy GameRunner, aby Program pełnił tylko rolę bootstrappera aplikacji.
+To świetny przykład zastosowania Single Responsibility Principle (SRP) w praktyce – czyli tego, że „jedna klasa powinna mieć tylko jeden powód do zmiany”.
+
+Dowiesz się:
+👉 jak uprościć metodę Main do kilku linijek,
+👉 jak wydzielić odpowiedzialności krok po kroku,
+👉 jak przygotować kod pod testowanie i przyszłe rozszerzenia,
+👉 dlaczego nie warto przesadzać z liczbą klas (SRP ≠ jedna metoda = jedna klasa).
