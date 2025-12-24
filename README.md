@@ -141,3 +141,37 @@ Dowiesz się:
 👉 jak wydzielić odpowiedzialności krok po kroku,
 👉 jak przygotować kod pod testowanie i przyszłe rozszerzenia,
 👉 dlaczego nie warto przesadzać z liczbą klas (SRP ≠ jedna metoda = jedna klasa).
+
+
+#### Tutorial na YouTube: [Clean Architecture RPG #7 – Unit Testy w C# z xUnit i FluentAssertions | Testowanie Core (Domain)][ C# OOP Kurs cz.12 ](https://www.youtube.com/watch?v=qLwkGiDzApY)
+
+W tym odcinku wchodzimy w fundamenty testowania w Clean Architecture.
+Skupiamy się na warstwie Core (Domain) i pokazuję, jak pisać prawdziwe unit testy dla czystej logiki biznesowej – bez mocków, bez zależności, bez kombinowania.
+
+Na przykładzie klasy BattleService zobaczysz, że testowanie może być proste, szybkie i bardzo czytelne – dokładnie tak, jak zostało zaprojektowane w Clean Architecture.
+
+Nauczysz się:
+👉 czym są unit testy i dlaczego Core Layer to najlepsze miejsce, żeby od nich zacząć
+👉 jak skonfigurować projekt testowy (.NET + xUnit + FluentAssertions)
+👉 jak stosować AAA Pattern (Arrange–Act–Assert) w praktyce
+👉 jak testować logikę biznesową (BattleService) bez zależności zewnętrznych
+👉 jak obsługiwać edge cases (pusta lista, martwe postacie, skrajne scenariusze)
+👉 dlaczego testy są żywą dokumentacją i tarczą przy refaktoryzacji
+
+
+
+#### Tutorial na YouTube: [Clean Architecture Unit Testing Application Layer w .NET – Mockowanie zależności z Moq][ C# OOP Kurs cz.13 ](https://www.youtube.com/watch?v=8kmyMYO_Vew)
+
+
+W tym odcinku przechodzimy z testowania Core do prawdziwego świata – Application Layer, czyli warstwy, która ma zależności i spina use case’y w całość.
+Na przykładzie GameService pokazuję, jak pisać prawdziwe unit testy, a nie przypadkowe testy integracyjne udające unit.
+
+To materiał, który porządkuje myślenie o testach w projektach enterprise.
+
+Nauczysz się:
+👉 czym naprawdę jest mock i po co go używamy
+👉 jak testować Application Layer w pełnej izolacji
+👉 jak używać Moq: Setup() i Verify() w praktyce
+👉 jak testować orkiestrację, walidację i kontrakty między warstwami
+👉 dlaczego brak mocków = brak unit testów
+👉 jak testy mogą chronić architekturę przed regresją
