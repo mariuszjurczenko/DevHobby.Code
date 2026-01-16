@@ -175,3 +175,25 @@ Nauczysz się:
 👉 jak testować orkiestrację, walidację i kontrakty między warstwami
 👉 dlaczego brak mocków = brak unit testów
 👉 jak testy mogą chronić architekturę przed regresją
+
+
+#### Tutorial na YouTube: [Unit Testy w Infrastructure (.NET) – File.ReadAllText i Clean Architecture][ C# OOP Kurs cz.14 ](https://www.youtube.com/watch?v=HGP4oi2xtow)
+
+
+W tym odcinku wchodzimy w najbardziej problematyczne miejsce większości projektów .NET — warstwę Infrastructure.
+Pokażę Ci, dlaczego używanie File.ReadAllText bezpośrednio w kodzie niszczy izolację testów i jak w prosty, czysty sposób przywrócić prawdziwe unit testy, zgodne z zasadami Clean Architecture.
+
+Ten materiał to praktyczna odpowiedź na pytanie: „Czy Infrastructure da się testować unit testami?” (Spoiler: tak — i to bez magii).
+
+Nauczysz się:
+👉 dlaczego statyczne API (File.ReadAllText) są problemem testowym
+👉 jak wprowadzić minimalną abstrakcję (wrapper) nad systemem plików
+👉 jak refaktoryzować repozytorium, aby nie znało szczegółów technicznych
+👉 jak testować Infrastructure bez prawdziwych plików i bez środowiska
+👉 jak testy wymuszają lepszą architekturę, zamiast ją komplikować
+
+Efekt:
+Infrastructure przestaje być „nietykalna”
+unit testy są szybkie, deterministyczne i czytelne
+architektura staje się spójna z Domain i Application
+To jest dokładnie ta granica, o którą chodzi w Clean Architecture.
